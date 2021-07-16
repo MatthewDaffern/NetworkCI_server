@@ -1,0 +1,17 @@
+first jenkins project iiiiiis a basic CI server focused on change management for Network Configs.
+
+It has 3 parts
+
+
+1. The config pusher
+2. The CI function
+3. The email service
+
+1. the config pusher is reliant on netmiko
+2. the CI function is based on using a JSON file to check for banned items.
+   There are a few major sections that direct the code to do stuff.
+        A. Reject
+        B. Replace
+        C. Required
+3. The email service emails when there is a rejection, or when the service is down.
+

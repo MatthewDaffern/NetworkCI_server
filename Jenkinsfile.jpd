@@ -1,0 +1,20 @@
+pipeline {
+agent { docker { image 'python3.5.1' } }
+    stages {
+        stage('build'){
+            steps {
+                bat 'cd source; ls | xargs "python"'
+            }
+            }
+        stage('Test') {
+            steps {
+                bat 'autopep.bat'
+                bat 'grok_for_sensitive_stuff.bat'
+            }
+        stage('deploy') {
+            steps {
+                bat 'echo done?'
+            }
+        }
+    }
+}
